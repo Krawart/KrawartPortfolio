@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Ueno Gatsby Starter',
+    title: 'Krawart portfolio',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'ueno-gatsby-starter',
-        short_name: 'starter',
+        name: 'Krawart portfolio',
+        short_name: 'portfolio',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
