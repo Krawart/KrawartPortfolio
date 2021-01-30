@@ -7,6 +7,8 @@ import Sidebar from "./components/Sidebar";
 
 import s from './Layout.scss';
 import EmailButton from "./components/EmailButton";
+import Background from "../assets/svg/bg/bg.svg";
+import BackgroundAppender from "./components/BackgroundAppender";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,7 +20,7 @@ const isDev = process.env.NODE_ENV === 'development';
 export default ({children}: LayoutProps) => (
   <div className={s.layout}>
     <Helmet {...helmet} />
-    {/*<BackgroundAppender bg={<Background/>}/>*/}
+    <BackgroundAppender bg={<Background/>}/>
 
     <Sidebar/>
 
