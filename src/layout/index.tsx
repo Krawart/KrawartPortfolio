@@ -18,9 +18,15 @@ const isDev = process.env.NODE_ENV === 'development';
 export default ({children}: LayoutProps) => (
   <div className={s.layout}>
     <Helmet {...helmet} />
+    {/*<BackgroundAppender bg={<Background/>}/>*/}
+
     <Sidebar/>
-    {children}
-    <EmailButton />
+
+    <div className={s.content}>
+      {children}
+      <EmailButton/>
+    </div>
+
     {isDev && <Devtools/>}
   </div>
 );

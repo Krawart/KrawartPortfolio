@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.intro {
+  width: 70%;
+}
+
+.quote {
+  color: #666666;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.4rem;
+  
+  &__author {
+    font-weight: 300;
+    font-size: 1rem;
+    
+    &:before {
+      content: "--";
+    }
+  }
+}

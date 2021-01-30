@@ -4,6 +4,7 @@ import links from "../utils/links";
 
 export default () => (
   <>
-    <Helmet title={links.about.title}/>
+    <Helmet title={links.show.title}/>
+    
   </>
 );

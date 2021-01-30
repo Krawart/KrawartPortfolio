@@ -1,6 +1,5 @@
 @import '~styles/config';
 @import '~styles/variables';
-@import "~styles/animations";
 
 :global {
   @import '~styles/base';
@@ -8,9 +7,15 @@
 
 .layout {
   display: block;
-  margin-left: $sidebar-width;
-
   min-height: 100vh;
+}
+
+.content {
+  position: relative;
+  display: block;
+  padding-left: $sidebar-width;
+  z-index: 100;
+  height: 100vh;
 }
 
 .sidebar {
@@ -19,6 +24,7 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 1000;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -26,7 +32,7 @@
   top: 0;
   height: 100vh;
   width: $sidebar-width;
-  background-color: #23272B;
+  background-color: #1E2125;
 
   padding: 1.5rem 0.5rem;
 }
