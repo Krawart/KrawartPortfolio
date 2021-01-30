@@ -6,6 +6,7 @@ import {Devtools} from '../components/devtools/Devtools';
 import Sidebar from "./components/Sidebar";
 
 import s from './Layout.scss';
+import EmailButton from "./components/EmailButton";
 
 interface LayoutProps {
   children: ReactNode;
@@ -19,6 +20,7 @@ export default ({children}: LayoutProps) => (
     <Helmet {...helmet} />
     <Sidebar/>
     {children}
+    <EmailButton />
     {isDev && <Devtools/>}
   </div>
 );

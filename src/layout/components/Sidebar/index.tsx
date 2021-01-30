@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import Github from '../../../assets/svg/github.svg';
+import Github from '../../../assets/svg/icons/github.svg';
 import s from '../../Layout.scss';
 import Logo from '../../../components/Logo';
 import SocialLink from '../SocialLink';
