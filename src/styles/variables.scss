@@ -5,6 +5,7 @@ $container-gutter-desktop: 70px;
 
 // sidebar
 $sidebar-width: 4rem;
+$content-layout-padding: 3rem;
 
 // grid
 $grid-column-count: 12;
@@ -15,8 +16,8 @@ $page-width: 1290px;
 $page-limit: $page-width + ($container-gutter-desktop * 2);
 
 // Fonts
-$font-family: 'Raleway', sans-serif;
-$font-heading: 'Raleway', sans-serif;
+$font-family: 'Jost', sans-serif;
+$font-heading: 'Jost', sans-serif;
 $font-size: 16px;
 $font-size-min: 13px;
 $line-height: 1.5;

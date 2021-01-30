@@ -26,9 +26,8 @@ export default ({children}: LayoutProps) => (
 
     <div className={s.content}>
       {children}
-      <EmailButton/>
     </div>
-
+    <EmailButton/>
     {isDev && <Devtools/>}
   </div>
 );

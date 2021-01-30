@@ -5,6 +5,8 @@
   @import '~styles/base';
 }
 
+
+
 .layout {
   display: block;
   min-height: 100vh;
@@ -13,7 +15,7 @@
 .content {
   position: relative;
   display: block;
-  padding-left: $sidebar-width;
+  padding: $content-layout-padding $content-layout-padding $content-layout-padding $sidebar-width + $content-layout-padding;
   z-index: 100;
   height: 100vh;
 }
