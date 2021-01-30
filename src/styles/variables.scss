@@ -3,6 +3,9 @@ $container-gutter-mobile: $gutter;
 $container-gutter-tablet: 50px;
 $container-gutter-desktop: 70px;
 
+// sidebar
+$sidebar-width: 4rem;
+
 // grid
 $grid-column-count: 12;
 $grid-baseline: 16px;
@@ -12,15 +15,15 @@ $page-width: 1290px;
 $page-limit: $page-width + ($container-gutter-desktop * 2);
 
 // Fonts
-$font-family: 'Roboto', sans-serif;
-$font-heading: 'Open Sans', sans-serif;
+$font-family: 'Raleway', sans-serif;
+$font-heading: 'Raleway', sans-serif;
 $font-size: 16px;
 $font-size-min: 13px;
 $line-height: 1.5;
 
 // Colors
-$color-font: #333;
-$color-background: #fff;
+$color-font: #CBCECD;
+$color-background: #171A1C;
 $color-placeholder: #ddd;
 
 // Timings

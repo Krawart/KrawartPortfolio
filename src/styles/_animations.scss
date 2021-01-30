@@ -1,0 +1,11 @@
+@keyframes pulsing {
+  0% {
+    filter: drop-shadow( 0px 0px 0px rgba(47, 214, 219, .3));
+  }
+  10% {
+    filter: drop-shadow( 0px 0px 8px rgba(47, 214, 219, .6));
+  }
+  50% {
+    filter: drop-shadow( 0px 0px 4px rgba(47, 214, 219, 0));
+  }
+}

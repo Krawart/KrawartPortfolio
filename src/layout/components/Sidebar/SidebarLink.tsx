@@ -2,15 +2,15 @@ import React, { ReactNode } from 'react';
 
 import { Link } from 'components/link/Link';
 
-import s from './HeaderLink.scss';
+import s from './SidebarLink.scss';
 
-interface HeaderLinkProps {
+interface SidebarLinkProps {
   name: string;
   to: string;
   icon?: ReactNode;
 }
 
-export const HeaderLink = ({ name, to, icon }: HeaderLinkProps) => {
+export const SidebarLink = ({ name, to, icon }: SidebarLinkProps) => {
   const isLink = typeof to !== 'undefined';
   const isExternal = isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(to || '');
 

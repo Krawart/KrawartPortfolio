@@ -1,12 +1,12 @@
 import favicon from 'assets/images/favicon.png';
 import share from 'assets/images/share.png';
 
-const title = 'Create Ueno App';
-const description = 'The easiest and fastest way to create new projects.';
+const title = 'Krawart Portfolio';
+const description = 'Programmer, artist and architect in one person. Let me introduce myself.';
 
 export const helmet = {
   title,
-  titleTemplate: '%s - Ueno',
+  titleTemplate: '%s - Krawart',
   htmlAttributes: { lang: 'en' },
   meta: [
     { name: 'description', content: description },

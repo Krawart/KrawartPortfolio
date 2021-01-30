@@ -1,0 +1,19 @@
+@import "~styles/animations.scss";
+@import "~styles/variables.scss";
+
+.social-link {
+  transition: all .1s;
+  animation: pulsing 3.5s infinite;
+  opacity: 0.5;
+
+  & > path {
+    width: 100%;
+    fill: $color-font;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+}

@@ -1,0 +1,48 @@
+@import '~styles/config';
+@import '~styles/variables';
+@import '~styles/animations';
+
+.navigation {
+
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  color: $color-font;
+  transition: all 0.2s;
+  text-decoration: none;
+  animation: pulsing 3s infinite;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__icon {
+    fill: red;
+  }
+
+  &__title {
+    margin-top: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    visibility: hidden;
+  }
+
+  &.active {
+    margin: 0 0.3rem;
+    opacity: 1;
+    transform: scale(1.1);
+    animation: pulsing 3s infinite;
+  }
+
+  &:hover &__title, &.active &__title {
+    visibility: visible;
+  }
+}
