@@ -22,19 +22,19 @@ const Index: FC = () => {
           selected={currentUrl === links.show.url}
           to={links.show.url}
           icon={<Portfolio/>}
-          title="Show"
+          title={links.show.title}
         />
         <SidebarNavigationItem
           selected={currentUrl === links.about.url}
           to={links.about.url}
           icon={<Profile/>}
-          title="About"
+          title={links.about.title}
         />
         <SidebarNavigationItem
           selected={currentUrl === links.stack.url}
           to={links.stack.url}
           icon={<Love/>}
-          title="Stack"
+          title={links.stack.title}
         />
       </SidebarNavigation>
       <SocialLink to="https://github.com/krawart" icon={<Github/>} rel="GitHub"/>
