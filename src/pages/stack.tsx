@@ -11,7 +11,7 @@ export default () => (
     <Helmet title={links.stack.title}/>
     <Container style={{height: '100%', display: 'flex', alignItems: 'center'}} maxWidth="lg">
       <Grid container alignItems="center" justify="center" spacing={2}>
-        <Grid item direction="column" justify="center" alignItems="flex-start" lg={5} className={s.text}>
+        <Grid container item direction="column" justify="center" alignItems="flex-start" lg={5} className={s.text}>
           <h2>In love with</h2>
           <p>My name is Filip. I love pizza and gladly travel to the USA. I like when things are reliable, work right
             and

@@ -1,7 +1,6 @@
 @import "~styles/animations";
 
 .button {
-  display: block;
   position: fixed;
   bottom: 3rem;
   right: 3rem;
@@ -9,8 +8,9 @@
   width: 4rem;
   animation: pulsing 2s infinite;
   transition: all .1s;
+  z-index: 2000;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }

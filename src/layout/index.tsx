@@ -12,22 +12,25 @@ import BackgroundAppender from "./components/BackgroundAppender";
 
 interface LayoutProps {
   children: ReactNode;
+  location: Location;
 }
 
 const isDev = process.env.NODE_ENV === 'development';
 
 // tslint:disable no-default-export
-export default ({children}: LayoutProps) => (
-  <div className={s.layout}>
-    <Helmet {...helmet} />
-    <BackgroundAppender bg={<Background/>}/>
+export default (props:LayoutProps) => {
+  return props ? (
+    <div className={s.layout}>
+      <Helmet {...helmet} />
+      <BackgroundAppender bg={<Background/>}/>
+      
+      <Sidebar location={props.location}/>
 
-    <Sidebar/>
-
-    <div className={s.content}>
-      {children}
+      <div className={s.content}>
+        {props.children}
+      </div>
+      <EmailButton/>
+      {isDev && <Devtools/>}
     </div>
-    <EmailButton/>
-    {isDev && <Devtools/>}
-  </div>
-);
+  ) : <></>;
+}

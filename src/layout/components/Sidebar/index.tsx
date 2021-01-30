@@ -10,28 +10,30 @@ import Profile from '../../../assets/svg/icons/profile.svg';
 import Love from '../../../assets/svg/icons/love.svg';
 import links from '../../../utils/links';
 
-const Index: FC = () => {
-  const currentUrl =
-    typeof window !== 'undefined' ? window.location.pathname + window.location.search : '';
+interface SidebarProps {
+  location: Location;
+}
 
+const Sidebar: FC<SidebarProps> = ({location}) => {
+  const pathname = location.pathname;
   return (
     <div className={s.sidebar}>
       <Logo/>
       <SidebarNavigation>
         <SidebarNavigationItem
-          selected={currentUrl === links.show.url}
+          selected={pathname === links.show.url}
           to={links.show.url}
           icon={<Portfolio/>}
           title={links.show.title}
         />
         <SidebarNavigationItem
-          selected={currentUrl === links.about.url}
+          selected={pathname === links.about.url}
           to={links.about.url}
           icon={<Profile/>}
           title={links.about.title}
         />
         <SidebarNavigationItem
-          selected={currentUrl === links.stack.url}
+          selected={pathname === links.stack.url}
           to={links.stack.url}
           icon={<Love/>}
           title={links.stack.title}
@@ -42,4 +44,4 @@ const Index: FC = () => {
   );
 };
 
-export default Index;
+export default Sidebar;
