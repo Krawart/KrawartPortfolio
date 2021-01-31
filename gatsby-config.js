@@ -29,6 +29,13 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `assets`),
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

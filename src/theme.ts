@@ -19,8 +19,26 @@ export default createMuiTheme({
         textAlign: 'center',
       },
     },
+    h4: {
+      width: '100%',
+      fontSize: '3rem',
+      fontWeight: 500,
+      marginBottom: '1rem',
+      background: '-webkit-linear-gradient(0deg, #3ABFEE, #3AE2B5)',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent',
+      [breakpoints.down('md')]: {
+        textAlign: 'center',
+      },
+    },
     body1: {
       fontSize: '1rem',
+      [breakpoints.down('md')]: {
+        textAlign: 'center',
+      },
+    },
+    body2: {
+      fontSize: '1.2rem',
       [breakpoints.down('md')]: {
         textAlign: 'center',
       },
