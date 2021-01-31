@@ -1,12 +1,36 @@
 import { createMuiTheme } from '@material-ui/core';
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
+import createPalette from '@material-ui/core/styles/createPalette';
 
 const breakpoints = createBreakpoints({});
+
+const palette = createPalette({
+  primary: {
+    main: '#3ABFEE',
+    dark: '#1191BC',
+    light: '#3AE2B5',
+  },
+  text: {
+    primary: '#CBCECD',
+  },
+  background: {
+    default: '#151719',
+    paper: '#1e2125',
+  },
+});
+
 export default createMuiTheme({
-  overrides: {},
+  overrides: {
+    MuiButton: {
+      containedPrimary: {
+        color: palette.common.white,
+      },
+    },
+  },
   typography: {
     fontFamily: ['Jost', 'sans-serif'].join(','),
     fontSize: 16,
+
     h2: {
       width: '100%',
       fontSize: '3.5rem',
@@ -45,6 +69,11 @@ export default createMuiTheme({
     },
   },
   palette: {
+    primary: {
+      main: palette.primary.main,
+      dark: palette.primary.dark,
+      light: palette.primary.light,
+    },
     text: {
       primary: '#CBCECD',
     },
