@@ -1,4 +1,4 @@
-import Stack from 'components/Stack';
+import Stack from '../components/Stack';
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import links from "../utils/links";

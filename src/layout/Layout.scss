@@ -1,11 +1,5 @@
-@import '~styles/config';
-@import '~styles/variables';
-
-:global {
-  @import '~styles/base';
-}
-
-
+@import '../styles/config';
+@import '../styles/variables';
 
 .layout {
   display: block;
@@ -15,7 +9,8 @@
 .content {
   position: relative;
   display: block;
-  padding: $content-layout-padding $content-layout-padding $content-layout-padding $sidebar-width + $content-layout-padding;
+  padding: $content-layout-padding $content-layout-padding $content-layout-padding $sidebar-width +
+    $content-layout-padding;
   z-index: 100;
   height: 100vh;
 }
@@ -34,7 +29,7 @@
   top: 0;
   height: 100vh;
   width: $sidebar-width;
-  background-color: #1E2125;
+  background-color: #1e2125;
 
   padding: 1.5rem 0.5rem;
 }

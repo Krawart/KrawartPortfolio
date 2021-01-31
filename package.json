@@ -1,23 +1,21 @@
 {
-  "name": "ueno-gatsby-starter",
-  "description": "Opinionated Gatsby starter by Ueno",
+  "name": "krawart-portfolio",
+  "description": "Krawart portfolio",
   "version": "1.0.0",
-  "license": "MIT",
   "keywords": [
     "gatsby",
     "starter",
     "react",
     "typescript",
     "gatsby-starter",
-    "ueno"
+    "krawart"
   ],
   "contributors": [
-    "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
-    "Jérémy Barbet <jeremgraph@gmail.com>"
+    "Filip Krawiec <filip.krawiec@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+    "url": "https://github.com/krawart/krawart-portfolio"
   },
   "scripts": {
     "dev": "gatsby develop",
@@ -81,33 +79,29 @@
     "gatsby": "2.31.1",
     "gatsby-image": "2.10.0",
     "gatsby-plugin-config": "1.0.7",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-layout": "1.9.0",
     "gatsby-plugin-manifest": "2.11.0",
+    "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-react-helmet": "3.9.0",
     "gatsby-plugin-react-svg": "3.0.0",
+    "gatsby-plugin-sass": "^3.1.0",
     "gatsby-plugin-sharp": "2.13.4",
     "gatsby-plugin-typescript": "2.11.0",
     "gatsby-transformer-sharp": "2.11.0",
-    "lodash": "4.17.20",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-helmet": "6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
-    "@babel/plugin-proposal-decorators": "7.12.12",
     "@types/gsap": "1.20.2",
-    "@types/lodash": "4.14.168",
     "@types/node": "14.14.22",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
     "@types/react-helmet": "6.1.0",
-    "classnames": "2.2.6",
-    "classnames-loader": "2.1.0",
-    "node-sass": "5.0.0",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
-    "sass-loader": "10.1.1",
+    "sass": "^1.32.5",
     "stylelint": "13.9.0",
     "stylelint-config-recommended": "3.0.0",
     "tslint": "6.1.1",

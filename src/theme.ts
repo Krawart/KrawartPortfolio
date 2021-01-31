@@ -1,5 +1,22 @@
-import {createMuiTheme} from "@material-ui/core";
+import { createMuiTheme } from '@material-ui/core';
 
-const theme = createMuiTheme({
-  
-})
+export default createMuiTheme({
+  overrides: {
+
+  },
+  typography: {
+    fontFamily: [
+      'Jost',
+      'sans-serif',
+    ].join(','),
+  },
+  palette: {
+    text: {
+      primary: '#CBCECD'
+    },
+    background: {
+      default: '#151719',
+      paper: '#1e2125',
+    },
+  }
+});
