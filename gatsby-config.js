@@ -21,14 +21,15 @@ module.exports = {
       options: {
         fonts: [
           `Jost`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: 'swap',
+      },
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
+    'gatsby-plugin-graphql-codegen',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

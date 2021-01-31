@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import links from '../utils/links';
 import { Box, makeStyles, Typography } from '@material-ui/core';
 import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
+import { AboutPagePortraritQuery } from '../../graphql-types';
 
 const useStyles = makeStyles({
   about: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
   content: {},
 });
 
-export default ({ data }) => {
+const AboutPage: FC<PageProps<AboutPagePortraritQuery>> = ({ data }) => {
   const classes = useStyles();
   return (
     <>
@@ -32,8 +33,9 @@ export default ({ data }) => {
             Just a few words
           </Typography>
         </Box>
-        <Box flex marginTop="-8rem" maxWidth="30rem" width="100%" justifyContent="center">
-          <Img fluid={data.base.childImageSharp.fluid} fadeIn={false} />
+        <Box marginTop="-8rem" maxWidth="30rem" width="100%" justifyContent="center">
+          {/* @ts-ignore*/}
+          <Img fluid={data.file.childImageSharp.fluid} fadeIn={false} />
         </Box>
         <Box pt={3} maxWidth="45rem">
           <Typography variant="body1" align="center">
@@ -55,9 +57,11 @@ export default ({ data }) => {
   );
 };
 
+export default AboutPage;
+
 export const query = graphql`
-  query {
-    base: file(relativePath: { eq: "images/portrait.png" }) {
+  query AboutPagePortrarit {
+    file(relativePath: { eq: "images/portrait.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_noBase64
