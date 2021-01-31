@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import { Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  root: {
-    height: '100%',
+  landing: {
+    minHeight: '100vh',
   },
   intro: {
     width: '100%',
@@ -39,13 +39,13 @@ export default () => {
         direction="column"
         justify="space-around"
         alignItems="center"
-        className={classes.root}
+        className={classes.landing}
       >
         <Grid item />
         <Grid item className={classes.intro}>
           <TriangleIntro />
         </Grid>
-        <Grid container direction="column" item className={classes.quote} spacing={2}>
+        <Grid container direction="column" item className={classes.quote}>
           <Grid item>Live to learn, and you will really learn to live.</Grid>
           <Grid item className={classes.author}>
             John C. Maxwell

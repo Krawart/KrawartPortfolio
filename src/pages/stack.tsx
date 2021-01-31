@@ -1,32 +1,51 @@
 import Stack from '../components/Stack';
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import links from "../utils/links";
+import { Helmet } from 'react-helmet';
+import links from '../utils/links';
 
-import s from "./Stack.scss";
-import {Box, Container, Grid} from "@material-ui/core";
+import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
-export default () => (
-  <>
-    <Helmet title={links.stack.title}/>
-    <Container style={{height: '100%', display: 'flex', alignItems: 'center'}} maxWidth="lg">
-      <Grid container alignItems="center" justify="center" spacing={2}>
-        <Grid container item direction="column" justify="center" alignItems="flex-start" lg={5} className={s.text}>
-          <h2>In love with</h2>
-          <p>My name is Filip. I love pizza and gladly travel to the USA. I like when things are reliable, work right
-            and
-            make a good aesthetic impression. I was always close with technology. Throughout my school years I trained
-            myself in website making, learned to program, among other things I also taught as an externist on a
-            Professional Media College. The Technical University of Ostrava, particulary studying architecture gave me
-            a
-            wider perspective on finding solutions of different problems.</p>
+const useStyles = makeStyles({
+  stack: {
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  text: {},
+  infographic: {},
+});
+
+export default () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Helmet title={links.stack.title} />
+      <Container maxWidth="lg" className={classes.stack}>
+        <Grid container alignItems="center" justify="center" spacing={4}>
+          <Grid
+            container
+            item
+            direction="column"
+            justify="center"
+            alignItems="flex-start"
+            xs={12}
+            lg={5}
+            className={classes.text}
+          >
+            <Typography variant="h2">In love with</Typography>
+            <Typography variant="body1">
+              I have experience with plenty of software, frameworks, and tools. Being in university,
+              I had to master 3D/2D graphic software. Besides study, I was passionate about web
+              development. When I finished my architect career, I engaged in WebApp development on
+              160%. Now, I am diving into mystery corners of Spring family products.
+              <br />
+            </Typography>
+          </Grid>
+          <Grid container item justify="center" xs={12} lg={7} className={classes.infographic}>
+            <Stack />
+          </Grid>
         </Grid>
-        <Grid item lg={7}>
-          <Box width={"100%"}>
-            <Stack/>
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
-  </>
-);
+      </Container>
+    </>
+  );
+};

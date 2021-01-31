@@ -8,7 +8,13 @@ import './Layout.scss';
 import EmailButton from './components/EmailButton';
 import Background from '../assets/svg/bg/bg.svg';
 import BackgroundAppender from './components/BackgroundAppender';
-import { Container, CssBaseline, makeStyles, MuiThemeProvider } from '@material-ui/core';
+import {
+  Container,
+  CssBaseline, Grid,
+  makeStyles,
+  MuiThemeProvider,
+  responsiveFontSizes,
+} from '@material-ui/core';
 import theme from '../theme';
 
 interface LayoutProps {
@@ -24,11 +30,10 @@ const useStyles = makeStyles({
   },
   content: {
     position: 'relative',
-    padding: '2rem',
     marginLeft: '4rem',
     zIndex: 100,
-    height: '100vh',
-    width: 'calc(100vw - 4rem)'
+    height: '100%',
+    width: 'calc(100vw - 4rem)',
   },
 });
 
@@ -39,20 +44,20 @@ export default ({ children }: LayoutProps) => {
     <>
       <Helmet {...helmet} />
 
-      <MuiThemeProvider theme={theme}>
+      <MuiThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline />
-        <div className={classes.root}>
-          <BackgroundAppender bg={<Background />} />
+        <BackgroundAppender bg={<Background />} />
 
-          <Sidebar location={location} />
+        <Sidebar location={location} />
 
+        <Grid className={classes.root}>
           <Container maxWidth="xl" className={classes.content}>
             {children}
           </Container>
+        </Grid>
 
-          <EmailButton />
-          {isDev && <></>}
-        </div>
+        <EmailButton />
+        {isDev && <></>}
       </MuiThemeProvider>
     </>
   );
