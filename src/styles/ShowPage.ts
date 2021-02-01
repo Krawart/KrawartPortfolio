@@ -1,4 +1,4 @@
-import {createStyles, makeStyles, Theme} from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from '@material-ui/core';
 
 export const useShowPageStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -7,9 +7,9 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
       width: '100%',
       minHeight: '100vh',
       display: 'flex',
+      padding: '2rem 1rem',
       justifyContent: 'space-around',
       alignItems: 'center',
-      padding: '5rem',
     },
     gridList: {
       width: '100%',
@@ -21,10 +21,13 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
       position: 'relative',
       transition: 'all 0.2s',
       background: theme.palette.background.paper,
+      overflow: 'hidden',
 
       '&:hover': {
         zIndex: 10000,
-        transform: 'scale(1.5)',
+        transform: 'scale(1.4)',
+        borderRadius: '0.5rem',
+        boxShadow: '0 0 20px rgba(0,0,0, 0.8)',
       },
 
       '&:hover $titleBar': {

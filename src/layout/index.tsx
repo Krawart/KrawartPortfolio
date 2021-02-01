@@ -10,7 +10,8 @@ import Background from '../assets/svg/bg/bg.svg';
 import BackgroundAppender from './components/BackgroundAppender';
 import {
   Container,
-  CssBaseline, Grid,
+  CssBaseline,
+  Grid,
   makeStyles,
   MuiThemeProvider,
   responsiveFontSizes,
@@ -38,8 +39,14 @@ const useStyles = makeStyles({
 });
 
 // tslint:disable no-default-export
-export default ({ children }: LayoutProps) => {
+export default ({ children, location }: LayoutProps) => {
   const classes = useStyles();
+
+  let pathname = '/';
+  if (typeof window !== `undefined`) {
+    pathname = location.pathname;
+  }
+
   return (
     <>
       <Helmet {...helmet} />
@@ -48,7 +55,7 @@ export default ({ children }: LayoutProps) => {
         <CssBaseline />
         <BackgroundAppender bg={<Background />} />
 
-        <Sidebar location={location} />
+        <Sidebar pathname={pathname} />
 
         <Grid className={classes.root}>
           <Container maxWidth="xl" className={classes.content}>

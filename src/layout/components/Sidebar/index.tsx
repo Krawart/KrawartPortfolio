@@ -11,7 +11,7 @@ import links from '../../../utils/links';
 import {makeStyles, Paper} from '@material-ui/core';
 
 interface SidebarProps {
-  location: Location;
+  pathname: string;
 }
 
 const useStyles = makeStyles({
@@ -32,8 +32,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Sidebar: FC<SidebarProps> = ({ location }) => {
-  const pathname = location.pathname;
+const Sidebar: FC<SidebarProps> = ({ pathname }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.sidebar}>
