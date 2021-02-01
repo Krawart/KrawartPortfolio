@@ -12,3 +12,12 @@
     filter: drop-shadow( 0px 0px 12px rgba(47, 214, 219, .5));
   }
 }
+
+@keyframes phaser {
+  0% {
+    filter: drop-shadow( 0px 0px 0px rgba(47, 214, 219, .0));
+  }
+  50% {
+    filter: drop-shadow( 0px 0px 20px rgba(47, 214, 219, .2));
+  }
+}

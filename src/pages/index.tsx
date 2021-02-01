@@ -1,35 +1,70 @@
+import TriangleIntro from '../components/TriangleIntro';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { Intro } from 'components/intro/Intro';
-import { Highlight } from 'components/intro/Highlight';
-import { BlockText } from 'components/block-text/BlockText';
+import { Grid, makeStyles } from '@material-ui/core';
 
-// tslint:disable no-default-export
-export default () => (
-  <>
-    <Helmet title="Home" />
+const useStyles = makeStyles({
+  landing: {
+    minHeight: '100vh',
+  },
+  intro: {
+    width: '100%',
+    maxWidth: '65rem',
+  },
+  quote: {
+    color: '#666666',
+    fontWeight: 400,
+    fontSize: '1.4rem',
+    textAlign: 'center',
+  },
+  author: {
+    fontWeight: 300,
+    fontSize: '1rem',
 
-    <Intro>
-      Opinionated starter by Ueno, using opinionated dependencies 🤪,{' '}
-      <Highlight>TypeScript</Highlight>,&nbsp;
-      <Highlight>SCSS</Highlight>, <Highlight>CSS Modules</Highlight>,{' '}
-      <Highlight>React Hooks</Highlight>,&nbsp;
-      <Highlight>root resolver</Highlight>, <Highlight>code splitting</Highlight> and a lot of love.
-    </Intro>
+    '&::before': {
+      content: "'-- '",
+    },
+  },
+});
 
-    <BlockText
-      heading="Who we are"
-      description={
-        <>
-          Ueno is a full-service agency, busy designing and building beautiful digital products,
-          brands, and experiences. For more informations go to{' '}
-          <a href="https://ueno.co" target="_blank" rel="noopener noreferrer">
-            ueno.co
-          </a>
-          .
-        </>
-      }
-    />
-  </>
-);
+export default () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Helmet title="Home" />
+
+      <Grid
+        container
+        direction="column"
+        justify="space-around"
+        alignItems="center"
+        className={classes.landing}
+      >
+        <Grid item />
+        <Grid item className={classes.intro}>
+          <TriangleIntro />
+        </Grid>
+        <Grid container direction="column" item className={classes.quote}>
+          <Grid item>Live to learn, and you will really learn to live.</Grid>
+          <Grid item className={classes.author}>
+            John C. Maxwell
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/*<div className={s.content}>*/}
+      {/*  <div/>*/}
+      {/*  <div className={s.intro}>*/}
+      {/*    <TriangleIntro/>*/}
+      {/*  </div>*/}
+      {/*  <div className={s.quote}>*/}
+      {/*    Live to learn, and you will really learn to live.*/}
+      {/*    <div className={s.quote__author}>*/}
+      {/*      John C. Maxwell*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
+    </>
+  );
+};

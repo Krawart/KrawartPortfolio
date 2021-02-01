@@ -1,6 +1,6 @@
-@import '~styles/config';
-@import '~styles/variables';
-@import '~styles/animations';
+@import '../../../styles/config';
+@import '../../../styles/variables';
+@import '../../../styles/animations';
 
 .navigation {
 
@@ -27,18 +27,20 @@
   }
 
   &__title {
-    margin-top: 3px;
-    font-size: 0.7rem;
+    margin-top: 5px;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
     visibility: hidden;
   }
 
   &.active {
-    margin: 0 0.3rem;
     opacity: 1;
-    transform: scale(1.1);
     animation: pulsing 3s infinite;
+  }
+
+  &.active &__icon {
+    transform: scale(1.3);
   }
 
   &:hover &__title, &.active &__title {
