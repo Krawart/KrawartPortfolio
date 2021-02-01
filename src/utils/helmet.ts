@@ -1,5 +1,5 @@
-import favicon from 'assets/images/favicon.png';
-import share from 'assets/images/share.png';
+import favicon from '../assets/images/favicon.png';
+import share from '../assets/images/share.png';
 
 const title = 'Krawart Portfolio';
 const description = 'Programmer, artist and architect in one person. Let me introduce myself.';
