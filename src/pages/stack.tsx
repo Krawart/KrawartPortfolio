@@ -36,7 +36,7 @@ export default () => {
             <Typography variant="body1">
               I have experience with plenty of software, frameworks, and tools. Being in university,
               I had to master 3D/2D graphic software. Besides study, I was passionate about web
-              development. When I finished my architect career, I engaged in WebApp development on
+              development. Finished my career in architecture, I engaged in WebApp development on
               160%. Now, I am diving into mystery corners of Spring family products.
               <br />
             </Typography>

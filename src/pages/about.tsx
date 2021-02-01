@@ -48,7 +48,7 @@ const AboutPage: FC<PageProps<AboutPagePortraritQuery>> = ({ data }) => {
             perspective on finding solutions to different problems. I had to master design
             principles and train the ability to sell my idea to customers. <br />
             Working in the international architecture company RMJM I had to deal with civil engineer
-            specialists with different specializations and put things together. Today, I belong to a
+            specialists with different specializations and put things together. Today, I belong in a
             small team compound of 7 people working as a Fullstack developer.
           </Typography>
         </Box>

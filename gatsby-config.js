@@ -29,7 +29,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-graphql-codegen',
+    // 'gatsby-plugin-graphql-codegen',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

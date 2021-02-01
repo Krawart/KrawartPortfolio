@@ -2730,6 +2730,17 @@ export type AboutPagePortraritQuery = { file?: Maybe<{ childImageSharp?: Maybe<{
         & GatsbyImageSharpFluidLimitPresentationSizeFragment
       )> }> }> };
 
+export type ShowPageProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ShowPageProjectsQuery = { allFile: { edges: Array<{ node: (
+        Pick<File, 'id' | 'name'>
+        & { childImageSharp?: Maybe<{ fluid?: Maybe<(
+            GatsbyImageSharpFluidFragment
+            & GatsbyImageSharpFluidLimitPresentationSizeFragment
+          )> }> }
+      ) }> } };
+
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 export type GatsbyImageSharpFixed_TracedSvgFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
