@@ -9,7 +9,7 @@ import { Container } from '@material-ui/core';
 const ShopPage: FC<PageProps<ShowPageProjectsQuery>> = ({ data }) => {
   return (
     <>
-      <Helmet title={links.show.title} />
+      <Helmet title={"Show"} />
       <Container maxWidth={'lg'}>
         <ShowProjects data={data} />
       </Container>

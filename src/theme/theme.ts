@@ -30,6 +30,11 @@ const palette = createPalette({
 export default createMuiTheme({
   breakpoints: breakpoints,
   overrides: {
+    MuiIcon: {
+      root: {
+        color: 'white',
+      },
+    },
     MuiButton: {
       containedPrimary: {
         color: palette.common.white,

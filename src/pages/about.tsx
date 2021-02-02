@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import links from '../utils/links';
 import { Box, makeStyles, Typography } from '@material-ui/core';
 import Img from 'gatsby-image';
 import { graphql, PageProps } from 'gatsby';
@@ -22,7 +21,7 @@ const AboutPage: FC<PageProps<AboutPagePortraritQuery>> = ({ data }) => {
   const classes = useStyles();
   return (
     <>
-      <Helmet title={links.about.title} />
+      <Helmet title={'About'} />
 
       <div className={classes.about}>
         <Box zIndex={1}>

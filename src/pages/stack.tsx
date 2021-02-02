@@ -19,7 +19,7 @@ export default () => {
   const classes = useStyles();
   return (
     <>
-      <Helmet title={links.stack.title} />
+      <Helmet title={"Stack"} />
       <Container maxWidth="lg" className={classes.stack}>
         <Grid container alignItems="center" justify="center" spacing={4}>
           <Grid

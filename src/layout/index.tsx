@@ -8,8 +8,10 @@ import './Layout.scss';
 import EmailButton from './components/EmailButton';
 import Background from '../assets/svg/bg/bg.svg';
 import BackgroundAppender from './components/BackgroundAppender';
-import { Container, CssBaseline, Grid, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Container, CssBaseline, Grid, useTheme } from '@material-ui/core';
 import { usePathname } from './hooks/use-pathname';
+import { useStyles } from './styles';
+import links from "../utils/links";
 
 interface LayoutProps {
   children: any;
@@ -18,25 +20,9 @@ interface LayoutProps {
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const useStyles = (theme: Theme) =>
-  makeStyles({
-    root: {
-      minHeight: '100vh',
-    },
-    content: {
-      position: 'relative',
-      [theme.breakpoints.up('md')]: {
-        marginLeft: '4rem',
-      },
-      zIndex: 100,
-      height: '100%',
-      width: 'calc(100vw - 4rem)',
-    },
-  });
-
 const Layout: FC<LayoutProps> = ({ children, location }) => {
   const theme = useTheme();
-  const classes = useStyles(theme)();
+  const classes = useStyles(theme);
   const pathname = usePathname(location);
 
   return (
@@ -46,7 +32,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       <CssBaseline />
       <BackgroundAppender bg={<Background />} />
 
-      <Navigation pathname={pathname} githubUrl={'https://github.com/krawart'} />
+      <Navigation links={links} pathname={pathname} githubUrl={'https://github.com/krawart'} />
 
       <Grid className={classes.root}>
         <Container maxWidth="xl" className={classes.content}>

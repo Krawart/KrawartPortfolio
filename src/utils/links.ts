@@ -1,21 +1,25 @@
-export interface Link {
+export interface PageLink {
   title: string;
+  icon: string;
   url: string;
 }
 
-const links = {
-  "show": {
-    title: "Show",
-    url: "/show"
+const links: PageLink[] = [
+  {
+    title: 'Show',
+    icon: 'dashboard',
+    url: '/show',
   },
-  "about": {
-    title: "About",
-    url: "/about"
+  {
+    title: 'About',
+    icon: 'account_circle',
+    url: '/about',
   },
-  "stack": {
-    title: "Stack",
-    url: "/stack"
-  }
-}
+  {
+    title: 'Stack',
+    icon: 'build_circle',
+    url: '/stack',
+  },
+];
 
 export default links;
