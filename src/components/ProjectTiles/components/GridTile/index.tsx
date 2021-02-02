@@ -2,26 +2,44 @@ import { Project } from '../../../../models/Project';
 import React, { FC } from 'react';
 import { useProjectTilesStyles } from '../../styles';
 import { Box, GridListTileBar } from '@material-ui/core';
-import GatsbyImage, {FluidObject} from 'gatsby-image';
+import GatsbyImage from 'gatsby-image';
+
+import PlaceholderImage from '../../../../assets/svg/placeholder.svg';
+import LinkWrapper from '../../../LinkWrapper';
 
 interface GridTileProps {
-  tile: Project;
-  image: FluidObject;
+  project: Project;
+  fluid?: any;
 }
 
-const GridTile: FC<GridTileProps> = ({ tile, image }) => {
+const TileContent: FC<GridTileProps> = ({ project, fluid }) => {
   const classes = useProjectTilesStyles();
   return (
     <>
-      <Box height={'100%'}>{image ? <GatsbyImage fluid={image} alt={tile.title} /> : <></>}</Box>
+      <Box height={'100%'}>
+        {fluid ? <GatsbyImage fluid={fluid} alt={project.title} /> : <PlaceholderImage />}
+      </Box>
+
       <GridListTileBar
-        subtitle={tile.title}
+        subtitle={project.title}
         classes={{
           root: classes.titleBar,
           title: classes.title,
         }}
       />
     </>
+  );
+};
+
+const GridTile: FC<GridTileProps> = (props) => {
+  const { project, fluid } = props;
+  if (project.url == undefined || project.url == '') {
+    return <TileContent project={project} fluid={fluid} />;
+  }
+  return (
+    <LinkWrapper href={project.url}>
+      <TileContent project={project} fluid={fluid} />
+    </LinkWrapper>
   );
 };
 

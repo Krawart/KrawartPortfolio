@@ -7,8 +7,7 @@ import { architectProjects } from '../../data/architectProjects';
 import { artistProjects } from '../../data/artistProjects';
 import { Project } from '../../models/Project';
 import { ShowPageProjectsQuery } from '../../../graphql-types';
-import ImageTile from './components/GridTile';
-import { FluidObject } from 'gatsby-image';
+import GridTile from './components/GridTile';
 import GridCategory from './components/GridCategory';
 
 interface ProjectTilesProps {
@@ -28,23 +27,13 @@ const ProjectTiles: FC<ProjectTilesProps> = ({ data }) => {
     return 3;
   };
 
-  const getListOfTiles = (tiles: Project[]) => {
-    return tiles.map((tile) => {
-      const image: FluidObject | undefined =
-        tile.img !== ''
-          ? data.allFile.edges.find((item: any) => item.node.name === tile.img)?.node
-              .childImageSharp?.fluid
-          : undefined;
+  const getListOfTiles = (tilesData: Project[]) => {
+    return tilesData.map((tile) => {
+      const image = data.allFile.edges.find((item: any) => item.node.name === tile.img);
 
       return (
         <GridListTile key={tile.img} className={classes.gridTile}>
-          {tile.url !== '' ? (
-            <a href={tile.url} target="_blank">
-              <ImageTile tile={tile} image={image} />
-            </a>
-          ) : (
-            <ImageTile tile={tile} image={image} />
-          )}
+          <GridTile project={tile} fluid={image?.node.childImageSharp?.fluid} />
         </GridListTile>
       );
     });
