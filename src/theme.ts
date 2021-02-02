@@ -2,7 +2,15 @@ import { createMuiTheme } from '@material-ui/core';
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 import createPalette from '@material-ui/core/styles/createPalette';
 
-const breakpoints = createBreakpoints({});
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 0,
+    sm: 500,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
+  },
+});
 
 const palette = createPalette({
   primary: {
@@ -20,6 +28,7 @@ const palette = createPalette({
 });
 
 export default createMuiTheme({
+  breakpoints: breakpoints,
   overrides: {
     MuiButton: {
       containedPrimary: {

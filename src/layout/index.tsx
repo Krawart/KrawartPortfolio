@@ -38,7 +38,6 @@ const useStyles = makeStyles({
   },
 });
 
-// tslint:disable no-default-export
 export default ({ children, location }: LayoutProps) => {
   const classes = useStyles();
 
