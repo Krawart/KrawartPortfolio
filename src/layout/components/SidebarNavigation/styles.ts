@@ -21,7 +21,7 @@ export const useStyles = () => {
 
       '&:hover $title, &$active $title': {
         opacity: 1,
-        transform: 'translateX(0.5rem)',
+        transform: 'translateX(0)',
       },
 
       '&:hover $icon, &$active $icon': {
@@ -35,50 +35,17 @@ export const useStyles = () => {
       fontWeight: 700,
       textTransform: 'uppercase',
       transition: 'all 0.15s',
+      transform: 'translateX(-10rem)',
+      opacity: 0,
     },
+
     icon: {
       transition: 'all 0.1s',
     },
+
     active: {
       opacity: 1,
       animation: 'pulsing 3s infinite',
-    },
-
-    menuButton: {
-      position: 'fixed',
-      zIndex: 4000,
-      top: 0,
-      left: 0,
-      padding: '1.2rem',
-      borderRadius: '0 0 1.2rem 0',
-      background: theme.palette.background.paper,
-      color: theme.palette.text.primary,
-      transition: 'all 0.1s',
-
-      '&:hover': {
-        cursor: 'pointer',
-        background: theme.palette.background.default,
-      },
-    },
-    activeMenu: {
-      transform: 'translate(-100%, -100%)',
-    },
-    menu: {
-      display: 'flex',
-      flexDirection: 'column',
-      padding: '1rem',
-      minWidth: '12rem',
-      height: '100%',
-    },
-    menuLogo: {
-      display: 'flex',
-      justifyContent: 'center',
-      padding: '1rem',
-    },
-    socialIcons: {
-      marginTop: 'auto',
-      alignSelf: 'center',
-      padding: '1rem',
     },
   })();
 };

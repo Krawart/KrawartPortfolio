@@ -32,7 +32,7 @@ const LargeSidebar: FC<SidebarProps> = ({ pathname, githubUrl, links }) => {
       <Logo />
       <SidebarNavigation>
         {links.map((link) => (
-          <NavigationItem link={link} pathname={pathname} />
+          <NavigationItem key={link.title} link={link} pathname={pathname} />
         ))}
       </SidebarNavigation>
       <SocialLink to={githubUrl} icon={<Github />} rel="GitHub" />

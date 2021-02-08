@@ -15,22 +15,26 @@ import {
 import { Menu } from '@material-ui/icons';
 import Logo from '../../../../components/Logo';
 import { PageLink } from '../../../../utils/links';
-import { Link } from 'gatsby';
+import Index from '../../../../components/Link';
+import SocialLink from '../../SocialLink';
+import Github from '../../../../assets/svg/icons/github.svg';
 
 interface NavigationItemProps {
   link: PageLink;
+  selected: boolean;
 }
 
-const NavigationItem: FC<NavigationItemProps> = ({ link }) => {
+const NavigationItem: FC<NavigationItemProps> = ({ link, selected }) => {
+  const classes = useStyles();
   return (
-    <Link to={link.url}>
-      <ListItem button key={link.title}>
-        <ListItemIcon>
-          <Icon>{link.icon}</Icon>
-        </ListItemIcon>
-        <ListItemText primary={link.title} />
-      </ListItem>
-    </Link>
+      <Index to={link.url} className={`${classes.item} ${selected && classes.active}`}>
+        <ListItem button key={link.title}>
+          <ListItemIcon className={classes.icon}>
+            <Icon>{link.icon}</Icon>
+          </ListItemIcon>
+          <ListItemText className={classes.title}>{link.title}</ListItemText>
+        </ListItem>
+      </Index>
   );
 };
 
@@ -44,7 +48,7 @@ const MobileNavigation: FC<SidebarProps> = ({ githubUrl, links, pathname }) => {
     <>
       <Button
         variant={'contained'}
-        className={`${classes.menuButton} ${opened ? classes.active : ''}`}
+        className={`${classes.menuButton} ${opened ? classes.activeMenu : ''}`}
         onClick={() => toggleDrawer(!opened)}
       >
         <Menu />
@@ -63,9 +67,12 @@ const MobileNavigation: FC<SidebarProps> = ({ githubUrl, links, pathname }) => {
           <Divider />
           <List>
             {links.map((link) => (
-              <NavigationItem link={link} />
+              <NavigationItem link={link} selected={pathname == link.url} />
             ))}
           </List>
+          <Box className={classes.socialIcons} alignSelf={'flex-end'}>
+            <SocialLink to={githubUrl} icon={<Github />} rel="GitHub" />
+          </Box>
         </Box>
       </SwipeableDrawer>
     </>

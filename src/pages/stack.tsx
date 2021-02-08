@@ -1,7 +1,6 @@
 import Stack from '../components/Stack';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import links from '../utils/links';
 
 import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
@@ -19,7 +18,7 @@ export default () => {
   const classes = useStyles();
   return (
     <>
-      <Helmet title={"Stack"} />
+      <Helmet title={'Stack'} />
       <Container maxWidth="lg" className={classes.stack}>
         <Grid container alignItems="center" justify="center" spacing={4}>
           <Grid

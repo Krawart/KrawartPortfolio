@@ -20,6 +20,7 @@ const palette = createPalette({
   },
   text: {
     primary: '#CBCECD',
+    secondary: '#818ea0',
   },
   background: {
     default: '#151719',
@@ -29,13 +30,22 @@ const palette = createPalette({
 
 export default createMuiTheme({
   breakpoints: breakpoints,
+  palette: palette,
   overrides: {
+    MuiLink: {
+      root: {
+        color: palette.text.primary,
+      },
+    },
     MuiIcon: {
       root: {
         color: 'white',
       },
     },
     MuiButton: {
+      root: {
+        color: palette.common.white,
+      },
       containedPrimary: {
         color: palette.common.white,
       },
@@ -79,7 +89,7 @@ export default createMuiTheme({
     body1: {
       fontSize: '1rem',
       [breakpoints.down('md')]: {
-        textAlign: 'center',
+        textAlign: 'left',
       },
     },
     body2: {
@@ -87,20 +97,6 @@ export default createMuiTheme({
       [breakpoints.down('md')]: {
         textAlign: 'center',
       },
-    },
-  },
-  palette: {
-    primary: {
-      main: palette.primary.main,
-      dark: palette.primary.dark,
-      light: palette.primary.light,
-    },
-    text: {
-      primary: '#CBCECD',
-    },
-    background: {
-      default: '#151719',
-      paper: '#1e2125',
     },
   },
 });
