@@ -7,8 +7,10 @@ interface LinkProps {
   [key: string]: any;
 }
 
-export const Link = ({ children, to, ...props }: LinkProps) => (
-  <GatsbyLink to={to} {...props}>
+const Index = ({ children, to, ...props }: LinkProps) => (
+  <GatsbyLink to={to} {...props} style={{ color: 'inherit', textDecoration: 'none' }}>
     {children}
   </GatsbyLink>
 );
+
+export default Index;

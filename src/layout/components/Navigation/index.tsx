@@ -3,19 +3,21 @@ import LargeSidebar from './LargeNavigation';
 import { useWidth } from '../../../hooks/use-width';
 import { isWidthUp } from '@material-ui/core';
 import MobileNavigation from './MobileNavigation';
+import {PageLink} from "../../../utils/links";
 
 export interface SidebarProps {
   pathname: string;
+  links: PageLink[];
   githubUrl: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ pathname, githubUrl }) => {
+const Sidebar: FC<SidebarProps> = ({ pathname, githubUrl, links }) => {
   const width = useWidth();
 
   if (isWidthUp('md', width)) {
-    return <LargeSidebar pathname={pathname} githubUrl={githubUrl} />;
+    return <LargeSidebar links={links} pathname={pathname} githubUrl={githubUrl} />;
   }
-  return <MobileNavigation pathname={pathname} githubUrl={githubUrl} />;
+  return <MobileNavigation links={links} pathname={pathname} githubUrl={githubUrl} />;
 };
 
 export default Sidebar;

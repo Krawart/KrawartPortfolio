@@ -22,7 +22,8 @@ export const useProjectTilesStyles = makeStyles((theme: Theme) =>
       transition: 'all 0.2s',
       background: theme.palette.background.paper,
       overflow: 'hidden',
-
+    },
+    gridTileWithLink: {
       '&:hover': {
         zIndex: 10000,
         transform: 'scale(1.4)',

@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 import createPalette from '@material-ui/core/styles/createPalette';
+import { pulsing } from './animations';
 
 const breakpoints = createBreakpoints({
   values: {
@@ -20,6 +21,7 @@ const palette = createPalette({
   },
   text: {
     primary: '#CBCECD',
+    secondary: '#818ea0',
   },
   background: {
     default: '#151719',
@@ -29,10 +31,32 @@ const palette = createPalette({
 
 export default createMuiTheme({
   breakpoints: breakpoints,
+  palette: palette,
   overrides: {
+    MuiLink: {
+      root: {
+        color: palette.text.primary,
+      },
+    },
+    MuiIcon: {
+      root: {
+        color: 'white',
+      },
+    },
     MuiButton: {
+      root: {
+        color: palette.common.white,
+      },
       containedPrimary: {
         color: palette.common.white,
+      },
+    },
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          WebkitFontSmoothing: 'auto',
+        },
+        '@keyframes pulsing': pulsing,
       },
     },
   },
@@ -73,29 +97,11 @@ export default createMuiTheme({
     },
     body1: {
       fontSize: '1rem',
-      [breakpoints.down('md')]: {
-        textAlign: 'center',
-      },
+      textAlign: 'justify',
     },
     body2: {
       fontSize: '1.2rem',
-      [breakpoints.down('md')]: {
-        textAlign: 'center',
-      },
-    },
-  },
-  palette: {
-    primary: {
-      main: palette.primary.main,
-      dark: palette.primary.dark,
-      light: palette.primary.light,
-    },
-    text: {
-      primary: '#CBCECD',
-    },
-    background: {
-      default: '#151719',
-      paper: '#1e2125',
+      textAlign: 'justify',
     },
   },
 });

@@ -4,7 +4,7 @@ import { Box } from '@material-ui/core';
 
 export default () => {
   return (
-    <Box paddingLeft="5rem" width="100%" maxWidth="1200px">
+    <Box paddingLeft="4vw" width="100%" maxWidth="1200px">
       <Triangle  />
     </Box>
   );

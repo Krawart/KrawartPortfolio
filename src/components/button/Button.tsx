@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { Link } from 'components/link/Link';
+import Link from 'components/Link';
 
 import s from './Button.scss';
 

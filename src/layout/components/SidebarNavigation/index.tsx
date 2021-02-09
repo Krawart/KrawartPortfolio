@@ -1,12 +1,9 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 
-import s from "./SidebarNavigation.scss"
+interface SidebarNavigationProps {}
 
-interface SidebarNavigationProps {
-}
-
-const SidebarNavigation: FC<SidebarNavigationProps> = ({children}) => {
-  return <div className={s.navigation}>{children}</div>;
+const SidebarNavigation: FC<SidebarNavigationProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default SidebarNavigation;
