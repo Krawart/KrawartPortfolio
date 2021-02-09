@@ -49,7 +49,7 @@ export const useStyles = () => {
       zIndex: 4000,
       top: 0,
       left: 0,
-      padding: '1.2rem',
+      padding: '0.6rem',
       borderRadius: '0 0 1.2rem 0',
       background: theme.palette.background.paper,
       color: theme.palette.text.primary,

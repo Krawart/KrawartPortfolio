@@ -62,10 +62,6 @@ export default createMuiTheme({
       background: '-webkit-linear-gradient(0deg, #3ABFEE, #3AE2B5)',
       '-webkit-background-clip': 'text',
       '-webkit-text-fill-color': 'transparent',
-      [breakpoints.down('md')]: {
-        width: '100%',
-        textAlign: 'center',
-      },
     },
     h4: {
       fontSize: '3rem',
@@ -88,15 +84,11 @@ export default createMuiTheme({
     },
     body1: {
       fontSize: '1rem',
-      [breakpoints.down('md')]: {
-        textAlign: 'left',
-      },
+      textAlign: 'justify',
     },
     body2: {
       fontSize: '1.2rem',
-      [breakpoints.down('md')]: {
-        textAlign: 'center',
-      },
+      textAlign: 'justify',
     },
   },
 });

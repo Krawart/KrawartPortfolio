@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   base: {
     width: '100%',
-    maxWidth: '36rem',
+    maxWidth: '30rem',
     animation: 'phaser 6s infinite',
   },
 });

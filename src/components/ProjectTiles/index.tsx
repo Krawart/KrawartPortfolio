@@ -32,7 +32,10 @@ const ProjectTiles: FC<ProjectTilesProps> = ({ data }) => {
       const image = data.allFile.edges.find((item: any) => item.node.name === tile.img);
 
       return (
-        <GridListTile key={tile.img} className={classes.gridTile}>
+        <GridListTile
+          key={tile.img}
+          className={`${classes.gridTile} ${tile.url && classes.gridTileWithLink}`}
+        >
           <GridTile project={tile} fluid={image?.node.childImageSharp?.fluid} />
         </GridListTile>
       );

@@ -15,7 +15,7 @@ import {
 import { Menu } from '@material-ui/icons';
 import Logo from '../../../../components/Logo';
 import { PageLink } from '../../../../utils/links';
-import Index from '../../../../components/Link';
+import Link from '../../../../components/Link';
 import SocialLink from '../../SocialLink';
 import Github from '../../../../assets/svg/icons/github.svg';
 
@@ -27,14 +27,14 @@ interface NavigationItemProps {
 const NavigationItem: FC<NavigationItemProps> = ({ link, selected }) => {
   const classes = useStyles();
   return (
-      <Index to={link.url} className={`${classes.item} ${selected && classes.active}`}>
-        <ListItem button key={link.title}>
+      <Link to={link.url} className={`${classes.item} ${selected && classes.active}`}>
+        <ListItem button>
           <ListItemIcon className={classes.icon}>
             <Icon>{link.icon}</Icon>
           </ListItemIcon>
           <ListItemText className={classes.title}>{link.title}</ListItemText>
         </ListItem>
-      </Index>
+      </Link>
   );
 };
 
@@ -67,7 +67,7 @@ const MobileNavigation: FC<SidebarProps> = ({ githubUrl, links, pathname }) => {
           <Divider />
           <List>
             {links.map((link) => (
-              <NavigationItem link={link} selected={pathname == link.url} />
+              <NavigationItem key={link.title} link={link} selected={pathname == link.url} />
             ))}
           </List>
           <Box className={classes.socialIcons} alignSelf={'flex-end'}>

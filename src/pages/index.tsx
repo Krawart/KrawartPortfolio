@@ -2,69 +2,25 @@ import TriangleIntro from '../components/TriangleIntro';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { Grid, makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  landing: {
-    minHeight: '100vh',
-  },
-  intro: {
-    width: '100%',
-    maxWidth: '65rem',
-  },
-  quote: {
-    color: '#666666',
-    fontWeight: 400,
-    fontSize: '1.4rem',
-    textAlign: 'center',
-  },
-  author: {
-    fontWeight: 300,
-    fontSize: '1rem',
-
-    '&::before': {
-      content: "'-- '",
-    },
-  },
-});
+import { Box, Typography } from '@material-ui/core';
+import { useHomePageStyles } from '../styles/pages/homePageStyles';
 
 export default () => {
-  const classes = useStyles();
+  const classes = useHomePageStyles();
   return (
     <>
       <Helmet title="Home" />
 
-      <Grid
-        container
-        direction="column"
-        justify="space-around"
-        alignItems="center"
-        className={classes.landing}
-      >
-        <Grid item />
-        <Grid item className={classes.intro}>
+      <Box className={classes.root}>
+        <Box />
+        <Box className={classes.intro}>
           <TriangleIntro />
-        </Grid>
-        <Grid container direction="column" item className={classes.quote}>
-          <Grid item>Live to learn, and you will really learn to live.</Grid>
-          <Grid item className={classes.author}>
-            John C. Maxwell
-          </Grid>
-        </Grid>
-      </Grid>
-
-      {/*<div className={s.content}>*/}
-      {/*  <div/>*/}
-      {/*  <div className={s.intro}>*/}
-      {/*    <TriangleIntro/>*/}
-      {/*  </div>*/}
-      {/*  <div className={s.quote}>*/}
-      {/*    Live to learn, and you will really learn to live.*/}
-      {/*    <div className={s.quote__author}>*/}
-      {/*      John C. Maxwell*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+        </Box>
+        <Box flex flexDirection="column">
+          <Typography variant={'h6'}>Live to learn, and you will really learn to live.</Typography>
+          <Typography variant={'caption'}>John C. Maxwell</Typography>
+        </Box>
+      </Box>
     </>
   );
 };
