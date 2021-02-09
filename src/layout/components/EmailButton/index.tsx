@@ -11,10 +11,12 @@ const useStyles = makeStyles({
     height: '4rem',
     width: '4rem',
     animation: 'pulsing 2s infinite',
+    borderRadius: '100%',
+    boxShadow: '0 0 1rem rgba(0, 0, 0, 0.8)',
     transition: 'all .1s',
 
     '&:hover': {
-      transform: 'scale(1.1)',
+      transform: 'scale(1.2)',
     },
   },
 });

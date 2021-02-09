@@ -16,7 +16,7 @@ export default () => {
         <Box className={classes.intro}>
           <TriangleIntro />
         </Box>
-        <Box flex flexDirection="column">
+        <Box flexDirection="column">
           <Typography variant={'h6'}>Live to learn, and you will really learn to live.</Typography>
           <Typography variant={'caption'}>John C. Maxwell</Typography>
         </Box>

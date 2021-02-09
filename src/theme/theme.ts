@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 import createPalette from '@material-ui/core/styles/createPalette';
+import { pulsing } from './animations';
 
 const breakpoints = createBreakpoints({
   values: {
@@ -50,6 +51,14 @@ export default createMuiTheme({
         color: palette.common.white,
       },
     },
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          WebkitFontSmoothing: 'auto',
+        },
+        '@keyframes pulsing': pulsing,
+      },
+    },
   },
   typography: {
     fontFamily: ['Jost', 'sans-serif'].join(','),
@@ -62,6 +71,10 @@ export default createMuiTheme({
       background: '-webkit-linear-gradient(0deg, #3ABFEE, #3AE2B5)',
       '-webkit-background-clip': 'text',
       '-webkit-text-fill-color': 'transparent',
+      [breakpoints.down('md')]: {
+        width: '100%',
+        textAlign: 'center',
+      },
     },
     h4: {
       fontSize: '3rem',
