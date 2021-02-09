@@ -5,16 +5,18 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   button: {
     position: 'fixed',
+    zIndex: 3000,
     bottom: '3rem',
     right: '3rem',
     height: '4rem',
     width: '4rem',
     animation: 'pulsing 2s infinite',
+    borderRadius: '100%',
+    boxShadow: '0 0 1rem rgba(0, 0, 0, 0.8)',
     transition: 'all .1s',
-    zIndex: 2000,
 
     '&:hover': {
-      transform: 'scale(1.1)',
+      transform: 'scale(1.2)',
     },
   },
 });

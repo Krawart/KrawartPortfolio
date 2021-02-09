@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 
-export const useShowPageStyles = makeStyles((theme: Theme) =>
+export const useProjectTilesStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       position: 'relative',
@@ -22,7 +22,8 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
       transition: 'all 0.2s',
       background: theme.palette.background.paper,
       overflow: 'hidden',
-
+    },
+    gridTileWithLink: {
       '&:hover': {
         zIndex: 10000,
         transform: 'scale(1.4)',
@@ -38,7 +39,6 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
     },
     programmingTile: {
       display: 'flex',
-      height: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       color: theme.palette.common.white,
@@ -46,7 +46,6 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
     },
     architectureTile: {
       display: 'flex',
-      height: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       color: theme.palette.common.white,
@@ -54,7 +53,6 @@ export const useShowPageStyles = makeStyles((theme: Theme) =>
     },
     artTile: {
       display: 'flex',
-      height: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       color: theme.palette.common.white,

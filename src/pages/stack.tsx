@@ -1,35 +1,24 @@
 import Stack from '../components/Stack';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import links from '../utils/links';
 
-import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  stack: {
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  text: {},
-  infographic: {},
-});
+import { Box, Grid, Typography } from '@material-ui/core';
+import { useStackPageStyles } from '../styles/pages/stackPageStyles';
 
 export default () => {
-  const classes = useStyles();
+  const classes = useStackPageStyles();
   return (
     <>
-      <Helmet title={links.stack.title} />
-      <Container maxWidth="lg" className={classes.stack}>
+      <Helmet title={'Stack'} />
+      <Box className={classes.root}>
         <Grid container alignItems="center" justify="center" spacing={4}>
           <Grid
-            container
             item
+            container
             direction="column"
             justify="center"
-            alignItems="flex-start"
             xs={12}
-            lg={5}
+            lg={6}
             className={classes.text}
           >
             <Typography variant="h2">In love with</Typography>
@@ -41,11 +30,11 @@ export default () => {
               <br />
             </Typography>
           </Grid>
-          <Grid container item justify="center" xs={12} lg={7} className={classes.infographic}>
+          <Grid container item justify="center" xs={12} lg={6} className={classes.infographic}>
             <Stack />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };
