@@ -3,8 +3,6 @@ import React, { FC } from 'react';
 import { useProjectTilesStyles } from '../../styles';
 import { Box, GridListTileBar } from '@material-ui/core';
 import GatsbyImage from 'gatsby-image';
-
-import PlaceholderImage from '../../../../assets/svg/placeholder.svg';
 import LinkWrapper from '../../../LinkWrapper';
 
 interface GridTileProps {
@@ -17,7 +15,7 @@ const TileContent: FC<GridTileProps> = ({ project, fluid }) => {
   return (
     <>
       <Box height={'100%'}>
-        {fluid ? <GatsbyImage fluid={fluid} alt={project.title} /> : <PlaceholderImage />}
+        <GatsbyImage fluid={fluid} alt={project.title} />
       </Box>
 
       <GridListTileBar
