@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 const EmailButton: FC = () => {
   const classes = useStyles();
   return (
-    <a href="mailto:contact@krawart.com?subject=Krawart%20-%20Get%20in%20touch">
+    <a href="mailto:filip.krawiec@gmail.com?subject=Krawart%20-%20Get%20in%20touch">
       <div className={classes.button}>
         <Email />
       </div>
